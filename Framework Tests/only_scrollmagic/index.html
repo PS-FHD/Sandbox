@@ -10,31 +10,33 @@
     </head>
 
     <div id="container">
-        <section>
-            <div id="trigger1"></div>
-            <div id="animate1" style="width:200px; height: 200px; color:#fff; background-color:#f00; ">test</div>
-        
-        <script>
-                        // init controller
-             var controller = new ScrollMagic();
+        <div class="scrollContent">
+            <section>
+                <div id="trigger1"></div>
+                <div id="animate1" style="width:200px; height: 200px; color:#fff; background-color:#f00; ">test</div>
 
-             // assign handler "scene" and add it to Controller
-             var scene = new ScrollScene({duration: 1000})
-                             .addTo(controller);
+            <script>
+                            // init controller
+                 var controller = new ScrollMagic();
 
-        </script>
-        </section>
-        
-        
-        <section>
-            <div id="trigger2"></div>
-            <div id="animate2" style="width:200px; height: 200px; color:#fff; background-color:#f00; ">test2</div>
-        
-        <script>
-            var scene2 = new ScrollScene({duration:1000})
-                    .addTo(controller);
-        </script>
-        </section>
+                 // assign handler "scene" and add it to Controller
+                 var scene = new ScrollScene({duration: 1000})
+                                 .addTo(controller);
+
+            </script>
+            </section>
+
+
+            <section>
+                <div id="trigger2"></div>
+                <div id="animate2" style="width:200px; height: 200px; color:#fff; background-color:#f00; ">test2</div>
+
+            <script>
+                var scene2 = new ScrollScene({duration:1000})
+                        .addTo(controller);
+            </script>
+            </section>
+        </div>
     </div>
     
     
