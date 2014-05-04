@@ -8,49 +8,47 @@
         <script type="text/javascript" src="../ScrollMagic/js/jquery.scrollmagic.js"></script>
         <script type="text/javascript" src="../ScrollMagic/js/jquery.scrollmagic.debug.js"></script>
     </head>
+    <body>
+      <div id="container">
+          <div class="scrollContent">
+              <section>
+                  <div style="height: 900px; border: 1px dotted"></div>
+                  <div id="trigger1"></div>
+                  <div id="animate1" style="width:200px; height: 200px; color:#fff; background-color:#f00; ">test</div>
+                  <div style="height: 700px; border: 1px dotted"></div>
 
-    <div id="container">
-        <div class="scrollContent">
-            <section>
-                <div style="height: 900px"></div>
-                <div id="trigger1"></div>
-                <div id="animate1" style="width:200px; height: 200px; color:#fff; background-color:#f00; ">test</div>
-                <div style="height: 700px"></div>
+                  <script>
+                       // init controller
+                       var controller = new ScrollMagic();
 
-                <script>
-                     // init controller
-                     var controller = new ScrollMagic();
-
-                     var tween = TweenMax.to("#animate1", 0.5, {backgroundColor: "green", scale: 2.5});
-                     
-                     // assign handler "scene" and add it to Controller
-                     var scene = new ScrollScene({triggerElement: "#trigger1", duration: 200})
-                                     .setTween(tween)
-                                     .addTo(controller);
-                                     
-                     scene.addIndicators();
-                </script>
-            </section>
+                       var tween = TweenMax.to("#animate1", 0.5, {backgroundColor: "green", scale: 2.5});
+                       
+                       // assign handler "scene" and add it to Controller
+                       var scene = new ScrollScene({triggerElement: "#trigger1", duration: 200})
+                                       .setTween(tween)
+                                       .addTo(controller);
+                                       
+                       scene.addIndicators();
+                  </script>
+              </section>
 
 
-            <section>
-                <div id="trigger2"></div>
-                <div id="animate2" style="width:200px; height: 200px; color:#fff; background-color:#f00; ">test2</div>
-                <div style="height: 700px"></div>
+              <section>
+                  <div id="trigger2"></div>
+                  <div id="animate2" style="width:200px; height: 200px; color:#fff; background-color:#f00; ">test2</div>
+                  <div style="height: 700px; border: 1px dotted"></div>
 
-                <script>
-                    var tween = TweenMax.to("#animate2", 0.5, {backgroundColor: "yellow"});
-                
-                    var scene2 = new ScrollScene({triggerElement: "#trigger2"})
-                            .setTween(tween)
-                            .addTo(controller);
-                            
-                    scene2.addIndicators();
-                </script>
-            </section>
-        </div>
-    </div>
-    
-    
-    
+                  <script>
+                      var tween = TweenMax.to("#animate2", 0.5, {backgroundColor: "yellow"});
+                  
+                      var scene2 = new ScrollScene({triggerElement: "#trigger2"})
+                              .setTween(tween)
+                              .addTo(controller);
+                              
+                      scene2.addIndicators();
+                  </script>
+              </section>
+          </div>
+      </div>
+    </body>
 </html>
