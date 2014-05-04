@@ -2,28 +2,50 @@
 <html>
 <head>
 	<meta charset="utf-8" />
+  <meta name="viewport" content="width=500" />
 	<title>jInvertScroll Demo Page</title>
     <link rel="stylesheet" href="css/example.css" />
+    
+    <!--<script type="text/javascript" src="jInvertScroll/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="jInvertScroll/dist/js/jquery.jInvertScroll.js"></script>
+    <script type="text/javascript" src="ScrollMagic/js/_dependent/greensock/TweenMax.min.js"></script>-->
+    <script type="text/javascript" src="ScrollMagic/js/_dependent/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="ScrollMagic/js/_dependent/greensock/TweenMax.min.js"></script>-->
+    <script type="text/javascript" src="ScrollMagic/js/jquery.scrollmagic.js"></script>
+  	<script type="text/javascript" src="ScrollMagic/js/jquery.scrollmagic.debug.js"></script>
+    <script type="text/javascript" src="js/jQuery_mousewheel_plugin.js"></script>
+    
     <script>
 			$(document).ready(function($) {
-				// build tween
-				var tween = TweenMax.to("#animate1", 0.5, {backgroundColor: "green", scale: 2.5});
+        // init controller
+        var controller = new ScrollMagic({vertical: true});
 
-				// build scene
-				var scene = new ScrollScene({triggerElement: "#trigger1"})
-								.setTween(tween)
-								.addTo(controller);
+        // build tween
+        var tween = TweenMax.to("#target", 0.5, {backgroundColor: "green", width: "+=400"});
 
-				// show indicators (requires debug extension)
-				scene.addIndicators();
+        // build scene
+        var scene = new ScrollScene({triggerElement: "#trigger", duration: 500})
+                .setTween(tween)
+                .addTo(controller);
+        
+        /*$("div").bind('mousewheel', function(e){
+        alert(e.originalEvent.wheelDelta/120);
+            if(e.wheelDelta/120 > 0) {
+                window.scrollBy(-10, 0);
+            }
+            else{
+                window.scrollBy(10, 0);
+            }
+        });*/
+        $(document).mousewheel(function(objEvent, intDelta){
+          //window.scrollBy(-(intDelta * 50), 0);
+          $('html, body').animate({scrollLeft: $('html, body').scrollLeft() -(intDelta * 50), options: { queue: false }}, "fast");
+        });
 			});
 		</script>
     
-    <script type="text/javascript" src="jInvertScroll/libs/jquery.min.js"></script>
-    <script type="text/javascript" src="jInvertScroll/dist/js/jquery.jInvertScroll.js"></script>
-    <script type="text/javascript" src="ScrollMagic/js/jquery.scrollmagic.js"></script>
-  	<script type="text/javascript" src="ScrollMagic/js/jquery.scrollmagic.debug.js"></script>
-    <script type="text/javascript">
+    
+    <!--<script type="text/javascript">
         $(document).ready(function(){
             (function($) {
                 $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
@@ -31,17 +53,15 @@
                     height: 6000,                   // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
                     onScroll: function(percent) {   //optional: callback function that will be called when the user scrolls down, useful for animating other things on the page
                         console.log(percent);
-                        if(percent == 50){
-                            $("#animate1").css("display","block");
-                        }
+
                     }
                 });
             }(jQuery));
         });
-    </script>
+    </script>-->
 </head>
 <body>
-    <h1>jInvertScroll Example</h1>
+    <h1 >jInvertScroll Example</h1>
     
     <div class="horizon scroll">
         <img src="images/horizon.png" alt="" />
@@ -51,11 +71,21 @@
     </div>
     <div class="front scroll">
         <img src="images/front.png" alt="" />
-        <img class="" src="images/witch-stick-icon.png" alt="" />
+        <img  src="images/witch-stick-icon.png" alt="" />
     </div>
     
-    <br><br><br><br><br>
-    <div id="animate1" style="width: 250px; height: 50px; background-color: red; display:none;" class="scroll">
+    <br><br><br><br>
+    <div id="trigger"></div>
+    <div style="position: absolute; left: 4000px; width: 250px; height: 50px; background-color: red;">
+			<p>You wouldn't like me, when I'm angry!</p>
+			<a href="#" class="viewsource">view source</a>
+		</div>
+    <div id="target"></div>
+    <div style="position: absolute; left: 8000px; width: 250px; height: 50px; background-color: red;">
+			<p>You wouldn't like me, when I'm angry!</p>
+			<a href="#" class="viewsource">view source</a>
+		</div>
+    <div style="position: absolute; left: 0px; top: 0px; width: 8000px; height: 10px; background-color: red;">
 			<p>You wouldn't like me, when I'm angry!</p>
 			<a href="#" class="viewsource">view source</a>
 		</div>
