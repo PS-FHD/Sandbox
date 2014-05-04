@@ -31,7 +31,9 @@
                     height: 6000,                   // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
                     onScroll: function(percent) {   //optional: callback function that will be called when the user scrolls down, useful for animating other things on the page
                         console.log(percent);
-
+                        if(percent == 50){
+                            $("#animate1").css("display","block");
+                        }
                     }
                 });
             }(jQuery));
@@ -49,11 +51,11 @@
     </div>
     <div class="front scroll">
         <img src="images/front.png" alt="" />
-        <img class="scroll" src="images/witch-stick-icon.png" alt="" />
+        <img class="" src="images/witch-stick-icon.png" alt="" />
     </div>
     
     <br><br><br><br><br>
-    <div id="animate1" style="width: 250px; height: 50px; background-color: red;" class="scroll">
+    <div id="animate1" style="width: 250px; height: 50px; background-color: red; display:none;" class="scroll">
 			<p>You wouldn't like me, when I'm angry!</p>
 			<a href="#" class="viewsource">view source</a>
 		</div>
