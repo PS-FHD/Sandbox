@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ebenen in CSS</title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="ui.custom.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".drag").draggable({});
+			});	
+		</script>
+		<!-- CSS ist nich ausgelagert für easy Nachgucken -->
+		<link rel="stylesheet" href="../style.css">
+		<style>
+			.drag {
+				padding: 25px 50px;
+				display: inline-block;
+				position: relative;
+				cursor: move;
+				box-shadow: 2px 2px 0 rgba(0,0,0,0.9);
+				text-shadow: 1px 1px 0 rgba(255,255,255,0.2);
+			}
+			.blau {
+				left: -40px;
+				background: rgba(0,150,255,0.9);
+			}
+			.gruen {
+				background: rgba(50,255,0,0.9);
+				left: -120px;
+			}
+			.pink {
+				background: rgba(255,0,100,0.9);
+				left: -80px;
+				top: 40px;
+			}
+			.gelb {
+				background: rgba(255,210,0,0.9);
+				top: 40px;
+				z-index: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<span><b>Parallax Projekt</b> Code Beispiele</span>
+			<span class="active">z-index</span>
+			<a href="js.html">JS Dummy</a>
+		</nav>
+		<h1>CSS Ebenen und z-index</h1>
+		<p>
+			<strong>Einfach die Blöcke Verschieben zum Testen!</strong><br>
+			Generell gilt: der Block, der zuerst im Quelltext erscheint liegt am weitesten unten. Mit z-index kann man diese Reihefolge ändern!
+		</p>
+		<div class="drag gelb">z-index: 1<br>1. im quelltext</div>
+		<div class="drag blau">kein z-index<br>2. im quelltext</div>
+		<div class="drag pink">kein z-index<br>3. im quelltext</div>
+		<div class="drag gruen">kein z-index<br>4. im quelltext</div>
+		<div class="muhatest">textwasgeht!! wheee</div>
+                <h1>GITTTTTTTTTTT HALLO WELT ETC.. LOREM IPSUM....::SELF->GITtest</h1>
+                lkagnasgnaönaöankgakgnk.
+                <h2>test</h2>
+	</body>
+</html>
