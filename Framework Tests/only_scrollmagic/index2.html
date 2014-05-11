@@ -12,7 +12,7 @@
       <div id="container">
           <div class="scrollContent">
               <section>
-                  <div style="height: 900px; border: 1px dotted"></div>
+                  <div style="height: 800px; border: 1px dotted"></div>
                   <div id="trigger1"></div>
                   <div id="animate1" style="width:200px; height: 200px; color:#fff; background-color:#f00; ">test</div>
                   <div style="height: 700px; border: 1px dotted"></div>
@@ -24,7 +24,7 @@
                        var tween = TweenMax.to("#animate1", 0.5, {backgroundColor: "green", scale: 2.5});
                        
                        // assign handler "scene" and add it to Controller
-                       var scene = new ScrollScene({triggerElement: "#trigger1", duration: 200})
+                       var scene = new ScrollScene({triggerElement: "#trigger1", duration: 100})
                                        .setTween(tween)
                                        .addTo(controller);
                                        
@@ -39,10 +39,10 @@
                   <div style="height: 700px; border: 1px dotted"></div>
 
                   <script>
-                      var tween = TweenMax.to("#animate2", 0.5, {backgroundColor: "yellow"});
+                      var tween2 = TweenMax.to("#animate2", 0.5, {backgroundColor: "yellow"});
                   
                       var scene2 = new ScrollScene({triggerElement: "#trigger2"})
-                              .setTween(tween)
+                              .setTween(tween2)
                               .addTo(controller);
                               
                       scene2.addIndicators();

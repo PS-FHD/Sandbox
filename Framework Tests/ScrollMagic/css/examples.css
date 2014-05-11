@@ -52,6 +52,14 @@ section#titlechart {
 	min-height: 500px;
 	min-width: 100%;
 }
+section#end {
+	text-align: center;
+	position: relative;
+	height: 100%;
+	min-height: 500px;
+	min-width: 100%;
+}
+
 .horizontal section {
 	display: inline-block;
 	vertical-align: top;
@@ -65,6 +73,15 @@ section#titlechart #description {
 	height: 200px;
 	margin: -100px auto auto -300px;
 }
+section#end #end_description {
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	width: 600px;
+	height: 200px;
+	margin: -100px auto auto -300px;
+}
+
 section#titlechart #description h1 {
 	margin: 0;
 }
