@@ -3,51 +3,51 @@
     <head>
         <title>test</title>
         <link type="text/css" rel="stylesheet" href="../ScrollMagic/css/style.css">
+        <link type="text/css" rel="stylesheet" href="../ScrollMagic/css/examples.css">
         <script type="text/javascript" src="../ScrollMagic/js/_dependent/greensock/TweenMax.min.js"></script>
         <script type="text/javascript" src="../ScrollMagic/js/_dependent/jquery-1.11.0.min.js"></script>        
         <script type="text/javascript" src="../ScrollMagic/js/jquery.scrollmagic.js"></script>
         <script type="text/javascript" src="../ScrollMagic/js/jquery.scrollmagic.debug.js"></script>
+        
     </head>
+    <body>
+<script>
+	var controller;
+	$(document).ready(function($) {
+		// init controller
+		controller = new ScrollMagic({vertical: false});
+	});
+</script>
+ 
+<div id="parallaxContainer">
+	<div class="layer1">
+		<div class="box1 white">
+			<p>A box in the sky.</p>
+			<a href="#" class="viewsource">view source</a>
+		</div>
+	</div>
+	<div class="layer2"></div>
+	<div class="layer3"></div>
+</div>
+<script>
+	$(document).ready(function($) {
+		// build tween
+		var tween = new TimelineMax ()
+			.add([
+				TweenMax.to("#parallaxContainer .layer1", 1, {backgroundPosition: "-40% 0", ease: Linear.easeNone}),
+				TweenMax.to("#parallaxContainer .layer2", 1, {backgroundPosition: "-500% 0", ease: Linear.easeNone}),
+				TweenMax.to("#parallaxContainer .layer3", 1, {backgroundPosition: "-225% 0", ease: Linear.easeNone})
+			]);
 
-    <div id="container">
-        <div class="scrollContent">
-            
-            <section>
-                
-                <div id="trigger1"></div>
-                <div style="min-height: 300px;"></div>
-                <div id="animate1" style="width:200px; height: 200px; color:#fff; background-color:#f00; ">test</div>
-<div style="min-height: 300px;"></div>
-            <script>
-                            // init controller
-                var controller = new ScrollMagic();
+		// build scene
+		var scene = new ScrollScene({triggerElement: "#parallaxContainer", duration: 2000, offset: 450})
+						.setTween(tween)
+						.setPin("#parallaxContainer")
+						.addTo(controller);
 
-                var tween = TweenMax.to("#animate1", 0.5, {backgroundColor: "green", scale: 2.5});
-
-                // build scene
-                var scene = new ScrollScene({triggerElement: "#trigger1"})
-                                                
-                                               
-                                                .addTo(controller);
-                    scene.addIndicators();
-            </script>
-            </section>
-
-
-            <section>
-                <div id="trigger2"></div>
-                <div id="animate2" style="width:200px; height: 200px; color:#fff; background-color:#f00; ">test2</div>
-<div style="min-height: 300px;"></div>
-            <script>
-                var scene2 = new ScrollScene({duration:1000,triggerElement:"#trigger1"})
-                        .setTween(tween)
-                        .addTo(controller);
-                    scene2.addIndicators();
-            </script>
-            </section>
-        </div>
-    </div>
-    
-    
-    
+		// show indicators (requires debug extension)
+		scene.addIndicators();
+	});
+</script>
+    </body>
 </html>
