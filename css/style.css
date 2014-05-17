@@ -1,0 +1,189 @@
+body {
+	background-color: black;
+	margin: 0px;
+	padding: 0px;
+	overflow-y: hidden; /* Unser Projekt scrollt nur seitw�rts. Verhindert, dass der Y-Scrollbalken angezeigt wird */
+}
+
+body > header {
+	/* Der Header (inkl. Navigationsmenü) sollte immer zu sehen sein, daher
+	   fixieren damit er beim Scrollen stehen bleibt.*/
+	position: fixed; 
+	top: 0px;
+	left: 0px;
+	width: 100%; /* Immer so breit wie der Viewport des browsers. */
+	height: 70px;
+	box-shadow: 0px 10px 10px 00px rgba(0, 0, 0, 0.3);
+	z-index: 10;
+}
+
+body > footer {
+	/* Der Footer sollte immer zu sehen sein, daher fixieren damit er beim Scrollen 
+	   stehen bleibt.*/
+	position: fixed;
+	width: 100%; /* Immer so breit wie der Viewport des browsers. */
+	top: 730px;
+	height: 70px;
+	box-shadow: 0px -10px 10px 00px rgba(0, 0, 0, 0.3);
+	z-index: 10;
+}
+
+#scrollContainer {
+	height: 660px;
+	background-color: magenta; /* Eventuelle lücken sollten gut Sichtbar sein. */
+	position: absolute;
+	top: 70px;
+	left: 0px;
+	white-space: nowrap;
+}
+
+.scene {
+	display: inline-block; /* Szenen sollten sich inline hintereinander Ausrichten. */
+	background-color: white;
+	width: 100vw; /* 100vw entspricht 100% der breite des Viewports des Browsers. */
+	min-width: 1000px;
+	max-width: 2000px;
+	height: 100%; /* Immer so groß wie der Scrollcontainer. */
+	
+}
+
+#intro1 {
+	background-image: url(../img/einl_selbstst_bg_2500x660.jpg);
+}
+
+#intro1 .student {
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	margin-left: 0 auto; /* Zentriert das Element. */
+}
+
+#intro1 .cloud {
+	position: absolute;
+}
+
+#intro1 .cloud.one {
+	top: 125px;
+}
+
+#intro1 .cloud.two {
+	top: 25px;
+}
+
+#intro1 .cloud.three {
+	top: 60px;
+}
+
+#intro1 .cloud.four {
+	top: 5px;
+}
+
+#intro1 .house {
+	position: absolute;
+	bottom: 0px;
+}
+
+#intro1 .house.right {
+	left: 72%;
+}
+
+#intro1 .house.left {
+	left: 6%;
+}
+
+#intro1 .airplane {
+	position: absolute;
+	top: 20px;
+	left: -10%;
+}
+
+#intro1 .intro1_textbox {
+	position: absolute;
+	margin-left: 40px;
+	margin-top: 30px;
+	line-height: 0.8;	
+	font-weight: 400;
+	letter-spacing: 0.2em;
+	font-size: 1.8em;
+	font-family: 'Oswald', sans-serif;
+}
+
+#intro1 .introtext {
+	
+	font-size: 1.8em;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 400;
+	color: #4169e1;
+	position: absolute;	
+}
+
+#intro1 .introtext.three{
+	font-size: 0.6em;
+}
+
+#intro1 .einstieg_head {
+	position: absolute;
+	margin-left: 40px;
+	margin-top: 30px;
+	line-height: 0.8;	
+	font-weight: 400;
+	letter-spacing: 0.1em;
+	font-size: 1.8em;
+	font-family: 'Oswald', sans-serif;
+}
+
+#intro1 .einstiegtext {
+	position: absolute;
+	font-size: 1.8em;
+	font-family: 'Oswald', sans-serif;
+}
+
+/*------intro2--------*/
+
+#intro2 {
+	background-image: url(../img/Einleitung/einl_bg2_2500x660.jpg);
+}
+
+#intro2 .group{
+	position: absolute;	
+	bottom: 0px;
+	left: 30%;
+	margin-left: 0 auto; /* Zentriert das Element. */
+
+}
+
+#intro2 .shine {
+	position: absolute;	
+	bottom: 7%;
+	left: 30.5%;
+	margin-left: 0 auto; /* Zentriert das Element. */
+}
+
+#intro2 .kommilitonen_head {
+	position: absolute;		
+	margin-left: 40px;
+	margin-top: 30px;
+	line-height: 0.8;	
+	font-weight: 400;
+	letter-spacing: 0.1em;
+	font-size: 1.8em;
+	font-family: 'Oswald', sans-serif;
+}
+
+#intro2 .kommilitonen_text {
+	position: absolute;		
+	font-size: 1.8em;
+	font-family: 'Oswald', sans-serif;
+}
+
+#intro2 .big_house {
+	position: absolute;		
+}
+
+#intro2 .einstieg_head {
+	position: absolute;		
+}
+
+#intro2 .einstiegtext {
+	position: absolute;		
+}
